@@ -1,0 +1,77 @@
+---
+name: chronograf
+
+templates: 
+  chronograf_ctl.erb: bin/chronograf_ctl
+  chronograf.conf.erb: config/chronograf.conf
+
+packages:
+  - pidutils
+  - chronograf
+
+properties:
+  http.tls.certificate:
+    default: ~
+    description: |
+      [required]
+      TLS certificate content for Chronograf web access.
+    example: |
+      -----BEGIN CERTIFICATE-----
+      <snip>
+      -----END CERTIFICATE-----
+
+  http.tls.private_key:
+    default: ~
+    description: |
+      [required]
+      TLS private key content for Chronograf web access.
+    example: |
+      -----BEGIN RSA PRIVATE KEY-----
+      <snip>
+      -----END RSA PRIVATE KEY-----
+
+  oauth.enabled:
+    default: false
+    description: Enables OAuth 2.0 providers for authorization and authentication.
+    example: true
+
+  oauth.token_secret:
+    default: ~
+    description: |
+      [required - if `oauth.enabled == true`]
+      Token  used for generating and validating JWT tokens.
+    example: "value"
+
+  oauth.auth_duration:
+    default: ~
+    description: |
+      Authorization duration, in hours, for OAuth authorization.
+      The default amounts to 30 days.
+    example: "1h" # Require users to reauthenticate after one hour.
+
+  oauth.providers.github.enabled:
+    default: false
+    description: Enables the GitHub OAuth 2.0 provider for authorization and authentication.
+    example: true
+
+  oauth.providers.github.client_id:
+    default: ~
+    description: |
+      [required - if using GitHub OAuth]
+      GitHub Client ID assigned to a registered GitHub application.
+    example: "value"
+
+  oauth.providers.github.client_secret:
+    default: ~
+    description: |
+      [required - if using GitHub OAuth]
+      GitHub Client Secret assigned to a registered GitHub application.
+    example: "value"
+
+  oauth.providers.github.organizations:
+    default: ~
+    description: |
+      Restrict authorization to specific GitHub organizations.
+    example:
+    - organization-one
+    - organization-two

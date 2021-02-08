@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e
+
+# DI-02
+<% if p('influxdb.https_enabled') == 'true' %>
+curl "https://localhost:8086/query" --data-urlencode "q=CREATE USER admin WITH PASSWORD 'password' WITH ALL PRIVILEGES" -k
+<% else %>
+curl "http://localhost:8086/query" --data-urlencode "q=CREATE USER admin WITH PASSWORD 'password' WITH ALL PRIVILEGES" -k
+<% end %>
+
+# DI-05
+sudo chown vcap:vcap /var/vcap/store/influxdb/meta/meta.db
+sudo chmod 640 /var/vcap/store/influxdb/meta/meta.db
+

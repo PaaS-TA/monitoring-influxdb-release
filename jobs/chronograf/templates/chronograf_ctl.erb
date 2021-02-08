@@ -1,0 +1,70 @@
+#!/bin/bash
+
+set -e -x
+
+RUN_DIR=/var/vcap/sys/run/chronograf
+LOG_DIR=/var/vcap/sys/log/chronograf
+STORE_DIR=/var/vcap/store/chronograf
+PACKAGE_DIR=/var/vcap/packages/chronograf
+PIDFILE=$RUN_DIR/chronograf.pid
+
+source /var/vcap/packages/pidutils/pidutils.sh
+
+case $1 in
+
+  start)
+
+    pid_guard $PIDFILE "chronograf"
+
+    mkdir -p $RUN_DIR
+    chown -R vcap:vcap $RUN_DIR
+
+    mkdir -p $LOG_DIR
+    chown -R vcap:vcap $LOG_DIR
+
+    mkdir -p $STORE_DIR/canned
+    chown -R vcap:vcap $STORE_DIR
+    chown -R vcap:vcap $STORE_DIR/canned
+
+    mkdir -p $PACKAGE_DIR\bin
+    chown -R vcap:vcap $PACKAGE_DIR
+
+    chown -R vcap:vcap /var/vcap/packages/chronograf/chronograf-1.4.3.0-1/usr/share/chronograf/
+
+    export GOMAXPROCS=$(nproc)
+
+
+    #echo $$ > $PIDFILE
+    PID=$$
+    echo "current pid : $PID"
+    echo $PID > $PIDFILE
+
+    # change file mode to 0666
+    chmod 666 $PIDFILE
+
+    # Allowed number of open file descriptors
+    ulimit -n 100000
+
+
+    exec chpst -u vcap:vcap $PACKAGE_DIR/chronograf-1.4.3.0-1/usr/bin/chronograf \
+      --host 0.0.0.0 --port 8888 \
+      --influxdb-url=http://127.0.0.1:8086 \
+      --bolt-path $STORE_DIR/chronograf-v1.db \
+      --canned-path /var/vcap/packages/chronograf/chronograf-1.4.3.0-1/usr/share/chronograf/canned \
+      1> $LOG_DIR/chronograf.stdout.log \
+      2> $LOG_DIR/chronograf.stderr.log
+
+;;
+
+  stop)
+    kill_and_wait $PIDFILE
+
+    ;;
+
+  *)
+echo "Usage: chronograf_ctl {start|stop}"
+
+    ;;
+
+esac
+

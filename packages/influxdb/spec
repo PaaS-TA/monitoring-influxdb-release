@@ -1,0 +1,8 @@
+---
+name: influxdb
+
+dependencies: 
+- golang
+
+files: 
+- influxdb/influxdb-1.8.3_linux_amd64.tar.gz

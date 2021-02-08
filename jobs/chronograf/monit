@@ -1,0 +1,6 @@
+check process chronograf
+  with pidfile /var/vcap/sys/run/chronograf/chronograf.pid
+  start program "/var/vcap/jobs/chronograf/bin/chronograf_ctl start"
+  stop program "/var/vcap/jobs/chronograf/bin/chronograf_ctl stop"
+  group vcap
+
