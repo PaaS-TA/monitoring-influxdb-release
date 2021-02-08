@@ -24,7 +24,7 @@
       ├── golang
       │   └── go1.9.2.linux-amd64.tar.gz
       ├── influxdb
-      │   ├── influxdb-1.8.3_linux_amd64.tar.gz
+      │   ├── influxdb-1.8.4_linux_amd64.tar.gz
       │   └── src
       │       ├── collectd.org
       │       ├── github.com
