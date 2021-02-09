@@ -9,7 +9,7 @@
   - Download & Copy "source files" into the src directory    
     ```   
     ## download source files    
-    $ wget -O src.zip https://45.248.73.44/index.php/s/d83ciizRS5RacXH/download
+    $ wget -O src.zip https://nextcloud.paas-ta.org/index.php/s/d83ciizRS5RacXH/download
     
     ## unzip download source files    
     $ unzip src.zip    
@@ -33,11 +33,11 @@
       └── pidutils.sh
     
     ```  
-  - Create PaaS-TA Portal UI Release   
+  - Create PaaS-TA Monitoring Inflxudb Release   
     ```   
-    ## <VERSION> :: release version (e.g. 1.0.0)   
+    ## <VERSION> :: release version (e.g. 1.8.4)   
     ## <RELEASE_TARBALL_PATH> :: release file path (e.g. /home/ubuntu/workspace/monitoring-influxdb-release-<VERSION>.tgz)    
-    $ bosh -e <bosh_name> create-release --name=monitoring-influxdb-release --sha2 --version=<VERSION> --tarball=<RELEASE_TARBALL_PATH> --force   
+    $ bosh -e <bosh_name> create-release --name=influxdb-1.8.4 --sha2 --version=<VERSION> --tarball=<RELEASE_TARBALL_PATH> --force   
     ```    
 ### Deployment
 - https://github.com/PaaS-TA/monitoring-deployment   
