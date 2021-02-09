@@ -6,5 +6,4 @@ dependencies:
 
 files: 
 - bootstrapper/**/*
-- influxdb/src/**/*
-- influxdb/.envrc
+- influxdb/**/*
