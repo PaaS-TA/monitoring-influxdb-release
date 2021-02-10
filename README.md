@@ -20,7 +20,7 @@
       │   └── src
       │       └── bootstrapper
       ├── chronograf
-      │   └── chronograf-1.4.3.0_linux_amd64.tar.gz
+      │   └── chronograf-1.8.9.1_linux_amd64.tar.gz
       ├── golang
       │   └── go1.9.2.linux-amd64.tar.gz
       ├── influxdb
