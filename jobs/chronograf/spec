@@ -1,15 +1,34 @@
 ---
 name: chronograf
 
-templates: 
-  chronograf_ctl.erb: bin/chronograf_ctl
-  chronograf.conf.erb: config/chronograf.conf
+templates:
+  bin/.src.erb: bin/.src 
+  bin/pre-start: bin/pre-start
+  bin/chronograf_ctl.erb: bin/chronograf_ctl
+  conf/chronograf.conf.erb: config/chronograf.conf
 
 packages:
   - pidutils
   - chronograf
 
+provides:
+  - name: chronograf
+    type: chronograf
+    properties:
+    - chronograf.password
+    - chronograf.https_enabled
+
+consumes:
+- name: chronograf
+  type: chronograf
+
 properties:
+  chronograf.password:
+    description: "Set Influxdb's password"
+
+  chronograf.https_enabled:
+    description: "Set Influxdb's HTTPS"
+
   http.tls.certificate:
     default: ~
     description: |

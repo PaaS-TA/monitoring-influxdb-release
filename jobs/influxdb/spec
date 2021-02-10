@@ -17,6 +17,7 @@ provides:
   - name: influxdb
     type: influxdb
     properties:
+    - influxdb.password
     - influxdb.pem_key
     - influxdb.https_enabled
 
@@ -25,11 +26,14 @@ consumes:
   type: influxdb
 
 properties: 
+  influxdb.password:
+    description: "Set Influxdb admin Password"
+
   influxdb.https_enabled:
     description: "enabled HTTPS"
     
   influxdb.pem_key:
-    description: "enabled HTTPS"
+    description: "HTTPS pem content"
        
   influxdb.database:
     description: "database name in influxdb to create"

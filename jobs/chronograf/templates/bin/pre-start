@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+cp /var/vcap/jobs/chronograf/bin/.src /var/vcap/packages/chronograf/chronograf-1.8.9.1-1/usr/share/chronograf/resources/
+
