@@ -9,7 +9,7 @@
   - Download & Copy "source files" into the src directory    
     ```   
     ## download source files    
-    $ wget -O src.zip https://nextcloud.paas-ta.org/index.php/s/nSnorCYAJ2AfE2N/download
+    $ wget -O src.zip https://nextcloud.paas-ta.org/index.php/s/e3eNjH9cdfXqz39/download
     
     ## unzip download source files    
     $ unzip src.zip    
@@ -18,19 +18,16 @@
     src
       ├── bootstrapper
       │   └── src
-      │       └── bootstrapper
+      │       ├── bootstrapper
+      │       └── github.com
       ├── chronograf
       │   └── chronograf-1.8.9.1_linux_amd64.tar.gz
       ├── golang
       │   └── go1.9.2.linux-amd64.tar.gz
       ├── influxdb
-      │   ├── influxdb-1.8.4_linux_amd64.tar.gz
-      │   └── src
-      │       ├── collectd.org
-      │       ├── github.com
-      │       ├── go.uber.org
-      │       └── golang.org
+      │   └── influxdb-1.8.4_linux_amd64.tar.gz
       └── pidutils.sh
+
     
     ```  
   - Create PaaS-TA Monitoring Inflxudb Release   
