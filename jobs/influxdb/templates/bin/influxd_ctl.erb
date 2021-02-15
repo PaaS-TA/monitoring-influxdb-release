@@ -133,20 +133,21 @@ case $1 in
           fi
         done
 
-        $bootstrapper \
-            -user <%= p('influxdb.user') %> \
-            -password <%= p('influxdb.password') %> \
-            -database <%= p('influxdb.database') %> \
-            -retention <%= p('influxdb.retention') %> \
-            -replication <%= p('influxdb.replication') %>
+ 	#$bootstrapper \
+             #-influxUrl $protocol://localhost:8086 \
+             #-user <%= p('influxdb.user') %> \
+             #-password <%= p('influxdb.password') %> \
+             #-database container_metric_db \
+             #-retention <%= p('influxdb.interval') %> \
+             #-replication <%= p('influxdb.replication') %>
 
-        if [ $? -ne 0 ]; then
-          log_failure_msg "failed to boostrap db"
-          killproc -p $pidfile SIGTERM && /bin/rm -rf $pidfile
-          exit 1
-        fi
+        #if [ $? -ne 0 ]; then
+          #log_failure_msg "failed to boostrap db"
+          #killproc -p $pidfile SIGTERM && /bin/rm -rf $pidfile
+          #exit 1
+        #fi
 
-        log_success_msg "succesfully boostrapped db"
+        #log_success_msg "succesfully boostrapped db"
 
         ;;
 

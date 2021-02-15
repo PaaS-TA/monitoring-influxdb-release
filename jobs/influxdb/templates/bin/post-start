@@ -13,3 +13,36 @@ curl "http://localhost:8086/query" --data-urlencode "q=CREATE USER admin WITH PA
 sudo chown vcap:vcap /var/vcap/store/influxdb/meta/meta.db
 sudo chmod 640 /var/vcap/store/influxdb/meta/meta.db
 
+# Boostrapper where is the actual executable
+bootstrapper=/var/vcap/packages/bootstrapper/bootstrapper
+
+# HTTPS 
+<% if p('influxdb.https_enabled') == 'true' %>
+protocol=https
+<% else %>
+protocol=http
+<% end %>
+
+$bootstrapper \
+        -influxUrl $protocol://localhost:8086 \
+        -user <%= p('influxdb.user') %> \
+        -password <%= p('influxdb.password') %> \
+        -database cf_metric_db \
+        -retention <%= p('influxdb.interval') %> \
+        -replication <%= p('influxdb.replication') %>
+
+$bootstrapper \
+        -influxUrl $protocol://localhost:8086 \
+        -user <%= p('influxdb.user') %> \
+        -password <%= p('influxdb.password') %> \
+        -database bosh_metric_db \
+        -retention <%= p('influxdb.interval') %> \
+        -replication <%= p('influxdb.replication') %>
+
+$bootstrapper \
+        -influxUrl $protocol://localhost:8086 \
+        -user <%= p('influxdb.user') %> \
+        -password <%= p('influxdb.password') %> \
+        -database container_metric_db \
+        -retention <%= p('influxdb.interval') %> \
+        -replication <%= p('influxdb.replication') %>

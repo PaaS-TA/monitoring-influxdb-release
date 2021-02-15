@@ -11,9 +11,9 @@ PIDFILE=$RUN_DIR/chronograf.pid
 source /var/vcap/packages/pidutils/pidutils.sh
 
 <% if p('chronograf.https_enabled') == 'true' %> 
-PROTOCOL=https 
+protocol=https 
 <% else %> 
-PROTOCOL=http
+protocol=http
 <% end %>
 
 case $1 in
@@ -55,7 +55,7 @@ case $1 in
     exec chpst -u vcap:vcap $PACKAGE_DIR/chronograf-1.8.9.1-1/usr/bin/chronograf \
       --resources-path=/var/vcap/packages/chronograf/chronograf-1.8.9.1-1/usr/share/chronograf/resources \
       --host 0.0.0.0 --port 8888 \
-      --influxdb-url= $PROTOCOL + ://localhost:8086 \
+      --influxdb-url= $protocol://localhost:8086 \
       --bolt-path $STORE_DIR/chronograf-v1.db \
       --canned-path /var/vcap/packages/chronograf/chronograf-1.8.9.1-1/usr/share/chronograf/canned \
       1> $LOG_DIR/chronograf.stdout.log \

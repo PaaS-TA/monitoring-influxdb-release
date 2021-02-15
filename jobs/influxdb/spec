@@ -34,17 +34,20 @@ properties:
     
   influxdb.pem_key:
     description: "HTTPS pem content"
-       
+
+  influxdb.interval:
+    description: "retention policy interval (bootstrapper)"
+
   influxdb.database:
     description: "database name in influxdb to create"
 
   influxdb.retention.max-enabled:
     default: true
-    description: "max-enabled"
+    description: "max-enabled (influxdb.conf)"
 
   influxdb.retention.check-interval:
     default: "30m0s"
-    description: "check-interval"
+    description: "check-interval (influxdb.conf)"
 
   influxdb.user:
     default: "root"
