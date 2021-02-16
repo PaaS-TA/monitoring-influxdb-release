@@ -1,4 +1,4 @@
-[submodule "src/bootstrapper/github.com/influxdata/influxdb"]
-	path = src/bootstrapper/github.com/influxdata/influxdb
+[submodule "src/bootstrapper/src/github.com/influxdata/influxdb"]
+	path = src/bootstrapper/src/github.com/influxdata/influxdb
 	url = https://github.com/influxdata/influxdb.git
 	branch = 1.8.4

@@ -9,17 +9,17 @@
   - Download & Copy "source files" into the src directory    
     ```   
     ## download source files    
-    $ wget -O src.zip https://nextcloud.paas-ta.org/index.php/s/e3eNjH9cdfXqz39/download
+    $ wget -O src.zip https://nextcloud.paas-ta.org/index.php/s/FsJCaCN6y4Q4pcB/download
     
     ## unzip download source files    
-    $ unzip src.zip    
+    $ unzip src.zip  (chronograf, golang, influxdb)  
 
     ## final src directory
     src
       ├── bootstrapper
       │   └── src
       │       ├── bootstrapper
-      │       └── github.com
+      │       └── github.com (influxdata/influxdb@bc8ec43 - 1.8.4)
       ├── chronograf
       │   └── chronograf-1.8.9.1_linux_amd64.tar.gz
       ├── golang
