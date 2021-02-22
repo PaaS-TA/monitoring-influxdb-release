@@ -9,7 +9,7 @@
   - Download & Copy "source files" into the src directory    
     ```   
     ## download source files    
-    $ wget -O src.zip https://nextcloud.paas-ta.org/index.php/s/FsJCaCN6y4Q4pcB/download
+    $ wget -O src.zip https://nextcloud.paas-ta.org/index.php/s/H8PZ6QSSfqEQT7Y/download
     
     ## unzip download source files    
     $ unzip src.zip  (chronograf, golang, influxdb)  
