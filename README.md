@@ -3,7 +3,7 @@
 ### Create PaaS-TA Monitoring InfluxDB Release   
   - Download the latest PaaS-TA Monitoring InfluxDB Release    
     ```   
-    $ git clone https://github.com/PaaS-TA/paas-ta-monitoring-influxdb-release.git    
+    $ git clone --recursive https://github.com/PaaS-TA/paas-ta-monitoring-influxdb-release.git    
     $ cd paas-ta-monitoring-influxdb-release   
     ```   
   - Download & Copy "source files" into the src directory    
