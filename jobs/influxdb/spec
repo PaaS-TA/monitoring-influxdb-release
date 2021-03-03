@@ -6,6 +6,7 @@ templates:
   bin/influxd_ctl.erb: bin/influxd_ctl
   bin/post-start: bin/post-start
   bin/private_key.pem.erb: bin/private_key.pem
+  bin/post-deploy.erb: bin/post-deploy
   conf/influxdb.conf.erb: config/influxdb.conf
 
 packages:

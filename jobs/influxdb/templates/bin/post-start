@@ -11,7 +11,6 @@ curl "http://localhost:8086/query" --data-urlencode "q=CREATE USER admin WITH PA
 
 # DI-05
 sudo chown vcap:vcap /var/vcap/store/influxdb/meta/meta.db
-sudo chmod 640 /var/vcap/store/influxdb/meta/meta.db
 
 # Boostrapper where is the actual executable
 bootstrapper=/var/vcap/packages/bootstrapper/bootstrapper
