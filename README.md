@@ -18,7 +18,7 @@
     <td rowspan=2 colspan=2><a href="https://github.com/PaaS-TA/monitoring-deployment">모니터링</a></td>
     <td><a href="https://github.com/PaaS-TA/PaaS-TA-Monitoring-Release">Monitoring</a></td>
     <td><a href="https://github.com/PaaS-TA/paas-ta-monitoring-logsearch-release">Logsearch</a></td>
-    <td>🚩 <a href="https://github.com/PaaS-TA/paas-ta-monitoring-influxdb-release">InfluxDB</a></td>
+    <td>🚩 <a href="https://github.com/PaaS-TA/monitoring-inflxudb-release">InfluxDB</a></td>
     <td><a href="https://github.com/PaaS-TA/paas-ta-monitoring-redis-release">Redis</a></td>
   </tr>
   <tr align=center>
@@ -63,13 +63,13 @@
 </table>
 <i>🚩 You are here.</i>
 
-## paas-ta-monitoring-influxdb-release
+## PaaS-TA monitoring-influxdb-release Guide
 
-### Create PaaS-TA Monitoring InfluxDB Release   
+### Create PaaS-TA monitoring-influxdb-release   
   - Download the latest PaaS-TA Monitoring InfluxDB Release    
     ```   
-    $ git clone --recursive https://github.com/PaaS-TA/paas-ta-monitoring-influxdb-release.git    
-    $ cd paas-ta-monitoring-influxdb-release   
+    $ git clone --recursive https://github.com/PaaS-TA/monitoring-inflxudb-release.git    
+    $ cd monitoring-inflxudb-release   
     ```   
   - Download & Copy "source files" into the src directory    
     ```   
@@ -95,7 +95,7 @@
 
     
     ```  
-  - Create PaaS-TA Monitoring Inflxudb Release   
+  - Create PaaS-TA monitoring-influxdb-release   
     ```   
     ## <VERSION> :: release version (e.g. 1.8.4)   
     ## <RELEASE_TARBALL_PATH> :: release file path (e.g. /home/ubuntu/workspace/monitoring-influxdb-release-<VERSION>.tgz)    
