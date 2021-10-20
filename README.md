@@ -63,7 +63,7 @@
 </table>
 <i>🚩 You are here.</i>
 
-## PaaS-TA monitoring-influxdb-release Guide
+# PaaS-TA monitoring-influxdb-release Guide
 
 ### Create PaaS-TA monitoring-influxdb-release   
   - Download the latest PaaS-TA Monitoring InfluxDB Release    
