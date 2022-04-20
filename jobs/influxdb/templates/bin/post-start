@@ -45,3 +45,11 @@ $bootstrapper \
         -database container_metric_db \
         -retention <%= p('influxdb.interval') %> \
         -replication <%= p('influxdb.replication') %>
+
+$bootstrapper \
+        -influxUrl $protocol://localhost:8086 \
+        -user <%= p('influxdb.user') %> \
+        -password <%= p('influxdb.password') %> \
+        -database logging_db \
+        -retention <%= p('influxdb.interval') %> \
+        -replication <%= p('influxdb.replication') %>
