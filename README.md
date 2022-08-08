@@ -88,7 +88,7 @@
       ├── chronograf
       │   └── chronograf-1.9.4_linux_amd64.tar.gz
       ├── golang
-      │   └── go1.9.2.linux-amd64.tar.gz
+      │   └── go1.17.13.linux-amd64.tar.gz
       ├── influxdb
       │   └── influxdb-1.8.10_linux_amd64.tar.gz
       └── pidutils.sh
