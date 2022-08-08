@@ -77,7 +77,7 @@
     $ wget -O src.zip https://nextcloud.paas-ta.org/index.php/s/pxrRkwDwgxKgHq5/download
     
     ## unzip download source files    
-    $ unzip src.zip  (chronograf, golang, influxdb)  
+    $ unzip src.zip 
 
     ## final src directory
     src
