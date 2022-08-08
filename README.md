@@ -68,13 +68,13 @@
 ### Create PaaS-TA monitoring-influxdb-release   
   - Download the latest PaaS-TA Monitoring InfluxDB Release    
     ```   
-    $ git clone --recursive https://github.com/PaaS-TA/monitoring-inflxudb-release.git    
+    $ git clone https://github.com/PaaS-TA/monitoring-inflxudb-release.git    
     $ cd monitoring-inflxudb-release   
     ```   
   - Download & Copy "source files" into the src directory    
     ```   
     ## download source files    
-    $ wget -O src.zip https://nextcloud.paas-ta.org/index.php/s/H8PZ6QSSfqEQT7Y/download
+    $ wget -O src.zip https://nextcloud.paas-ta.org/index.php/s/pxrRkwDwgxKgHq5/download
     
     ## unzip download source files    
     $ unzip src.zip  (chronograf, golang, influxdb)  
