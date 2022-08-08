@@ -2,7 +2,7 @@
 name: bootstrapper
 
 dependencies: 
-- golang
+- golang-1.17.13
 
 files: 
 - bootstrapper/**/*

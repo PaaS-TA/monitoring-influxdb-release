@@ -1,0 +1,4 @@
+set -ex
+
+tar xzf golang-1.17.13/go1.17.13.linux-amd64.tar.gz
+cp -R go/* ${BOSH_INSTALL_TARGET}

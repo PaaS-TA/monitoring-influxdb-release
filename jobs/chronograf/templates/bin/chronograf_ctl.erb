@@ -35,7 +35,7 @@ case $1 in
     mkdir -p $PACKAGE_DIR\bin
     chown -R vcap:vcap $PACKAGE_DIR
 
-    chown -R vcap:vcap /var/vcap/packages/chronograf/chronograf-1.8.9.1-1/usr/share/chronograf/
+    chown -R vcap:vcap /var/vcap/packages/chronograf/chronograf-1.9.4-1/usr/share/chronograf/
 
     export GOMAXPROCS=$(nproc)
 
@@ -52,12 +52,12 @@ case $1 in
     ulimit -n 100000
 
 
-    exec chpst -u vcap:vcap $PACKAGE_DIR/chronograf-1.8.9.1-1/usr/bin/chronograf \
-      --resources-path=/var/vcap/packages/chronograf/chronograf-1.8.9.1-1/usr/share/chronograf/resources \
+    exec chpst -u vcap:vcap $PACKAGE_DIR/chronograf-1.9.4-1/usr/bin/chronograf \
+      --resources-path=/var/vcap/packages/chronograf/chronograf-1.9.4-1/usr/share/chronograf/resources \
       --host 0.0.0.0 --port 8888 \
       --influxdb-url= $protocol://localhost:8086 \
       --bolt-path $STORE_DIR/chronograf-v1.db \
-      --canned-path /var/vcap/packages/chronograf/chronograf-1.8.9.1-1/usr/share/chronograf/canned \
+      --canned-path /var/vcap/packages/chronograf/chronograf-1.9.4-1/usr/share/chronograf/canned \
       1> $LOG_DIR/chronograf.stdout.log \
       2> $LOG_DIR/chronograf.stderr.log
 

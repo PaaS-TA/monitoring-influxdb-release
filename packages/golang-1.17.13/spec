@@ -1,0 +1,7 @@
+---
+name: golang-1.17.13
+
+dependencies: []
+
+files:
+- golang-1.17.13/go1.17.13.linux-amd64.tar.gz

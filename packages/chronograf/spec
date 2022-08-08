@@ -4,4 +4,4 @@ name: chronograf
 dependencies: []
 
 files: 
-  - chronograf/chronograf-1.8.9.1_linux_amd64.tar.gz
+  - chronograf/chronograf-1.9.4_linux_amd64.tar.gz

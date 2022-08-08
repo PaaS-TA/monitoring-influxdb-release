@@ -12,7 +12,7 @@ templates:
 packages:
   - influxdb
   - bootstrapper
-  - golang
+  - golang-1.17.13
 
 provides:
   - name: influxdb
