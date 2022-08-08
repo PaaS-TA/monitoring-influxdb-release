@@ -83,8 +83,7 @@
     src
       ├── bootstrapper
       │   └── src
-      │       ├── bootstrapper
-      │       └── github.com (influxdata/influxdb@bc8ec43 - 1.8.4)
+      │        └── bootstrapper
       ├── chronograf
       │   └── chronograf-1.9.4_linux_amd64.tar.gz
       ├── golang
@@ -97,7 +96,7 @@
     ```  
   - Create PaaS-TA monitoring-influxdb-release   
     ```   
-    ## <VERSION> :: release version (e.g. 1.8.4)   
+    ## <VERSION> :: release version (e.g. 5.8.0)   
     ## <RELEASE_TARBALL_PATH> :: release file path (e.g. /home/ubuntu/workspace/monitoring-influxdb-release-<VERSION>.tgz)    
     $ bosh -e <bosh_name> create-release --name=influxdb --sha2 --version=<VERSION> --tarball=<RELEASE_TARBALL_PATH> --force   
     ```    
