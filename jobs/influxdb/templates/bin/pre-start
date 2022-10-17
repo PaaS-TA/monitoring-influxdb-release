@@ -20,7 +20,7 @@ fi
 
 <% if p('influxdb.https_enabled') == 'true' %>
 cp /var/vcap/jobs/influxdb/bin/private_key.pem /home/vcap/.ssh/
-chmod 600 /home/vcap/.ssh/private_key.pem
-chown -R vcap:vcap /home/vcap/.ssh/private_key.pem 
+sudo chmod 600 /home/vcap/.ssh/private_key.pem
+sudo chown -R vcap:vcap /home/vcap/.ssh/private_key.pem 
 <% else %>
 <% end %>
