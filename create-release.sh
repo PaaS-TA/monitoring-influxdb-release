@@ -8,9 +8,9 @@ if [ -d ./dev_releases ]; then
   echo "delete dev_releases"
   rm -rf dev_releases
 fi
-if [ -f ./monitoring-influxdb-release-5.8.0.tgz ]; then
-  echo "delete monitoring-influxdb-release-5.8.0.tgz"
-  rm -rf monitoring-influxdb-release-5.8.0.tgz
+if [ -f ./monitoring-influxdb-release-5.8.1.tgz ]; then
+  echo "delete monitoring-influxdb-release-5.8.1.tgz"
+  rm -rf monitoring-influxdb-release-5.8.1.tgz
 fi
 
 #if [ -d ./blobs ]; then
@@ -19,6 +19,6 @@ fi
 #fi
 #
 
-bosh create-release --force --tarball monitoring-influxdb-release-5.8.0.tgz --name monitoring-influxdb-release --version 5.8.0
+bosh create-release --force --tarball monitoring-influxdb-release-5.8.1.tgz --name monitoring-influxdb-release --version 5.8.1
 
 

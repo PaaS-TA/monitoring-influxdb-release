@@ -26,7 +26,7 @@ $bootstrapper \
         -influxUrl $protocol://localhost:8086 \
         -user <%= p('influxdb.user') %> \
         -password <%= p('influxdb.password') %> \
-        -database cf_metric_db \
+        -database <%= p('influxdb.cf_db_name') %>  \
         -retention <%= p('influxdb.interval') %> \
         -replication <%= p('influxdb.replication') %>
 
@@ -34,7 +34,7 @@ $bootstrapper \
         -influxUrl $protocol://localhost:8086 \
         -user <%= p('influxdb.user') %> \
         -password <%= p('influxdb.password') %> \
-        -database bosh_metric_db \
+        -database <%= p('influxdb.bosh_db_name') %> \
         -retention <%= p('influxdb.interval') %> \
         -replication <%= p('influxdb.replication') %>
 
@@ -42,7 +42,7 @@ $bootstrapper \
         -influxUrl $protocol://localhost:8086 \
         -user <%= p('influxdb.user') %> \
         -password <%= p('influxdb.password') %> \
-        -database container_metric_db \
+        -database <%= p('influxdb.container_db_name') %> \
         -retention <%= p('influxdb.interval') %> \
         -replication <%= p('influxdb.replication') %>
 
@@ -50,7 +50,7 @@ $bootstrapper \
         -influxUrl $protocol://localhost:8086 \
         -user <%= p('influxdb.user') %> \
         -password <%= p('influxdb.password') %> \
-        -database logging_db \
+        -database <%= p('influxdb.logging_db_name') %> \
         -retention <%= p('influxdb.interval') %> \
         -replication <%= p('influxdb.replication') %>
 

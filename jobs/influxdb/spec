@@ -27,6 +27,18 @@ consumes:
   type: influxdb
 
 properties: 
+  influxdb.cf_db_name:
+    description: "PaaS-TA Core VM Metric Database"
+  
+  influxdb.bosh_db_name:
+    description: "Bosh VM Metric Database"
+
+  influxdb.container_db_name:
+    description: "PaaS-TA APP Metric Database"
+
+  influxdb.logging_db_name: 
+    description: "PaaS-TA Core VM Log Database "
+
   influxdb.password:
     description: "Set Influxdb admin Password"
 
