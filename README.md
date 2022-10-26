@@ -96,7 +96,7 @@
     ```  
   - Create PaaS-TA monitoring-influxdb-release   
     ```   
-    ## <VERSION> :: release version (e.g. 5.8.0)   
+    ## <VERSION> :: release version (e.g. 5.8.1)   
     ## <RELEASE_TARBALL_PATH> :: release file path (e.g. /home/ubuntu/workspace/monitoring-influxdb-release-<VERSION>.tgz)    
     $ bosh -e <bosh_name> create-release --name=influxdb --sha2 --version=<VERSION> --tarball=<RELEASE_TARBALL_PATH> --force   
     ```    
