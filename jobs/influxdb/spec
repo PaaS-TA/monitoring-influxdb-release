@@ -51,9 +51,6 @@ properties:
   influxdb.interval:
     description: "retention policy interval (bootstrapper)"
 
-  influxdb.database:
-    description: "database name in influxdb to create"
-
   influxdb.retention.max-enabled:
     default: true
     description: "max-enabled (influxdb.conf)"
