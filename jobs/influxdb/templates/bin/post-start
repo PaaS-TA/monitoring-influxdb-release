@@ -4,9 +4,9 @@ set -e
 
 # DI-02
 <% if p('influxdb.https_enabled') == 'true' %>
-curl "https://localhost:<%= p('influxdb.port') %>/query" --data-urlencode "q=CREATE USER '<%= p('influxdb.user') %>' WITH PASSWORD '<%= p('influxdb.password') %>'  WITH ALL PRIVILEGES" -k
+curl "https://localhost:<%= p('influxdb.port') %>/query" --data-urlencode "q=CREATE USER <%= p('influxdb.user') %> WITH PASSWORD '<%= p('influxdb.password') %>'  WITH ALL PRIVILEGES" -k
 <% else %>
-curl "http://localhost:<%= p('influxdb.port') %>/query" --data-urlencode "q=CREATE USER '<%= p('influxdb.user') %>' WITH PASSWORD '<%= p('influxdb.password') %>'  WITH ALL PRIVILEGES" -k
+curl "http://localhost:<%= p('influxdb.port') %>/query" --data-urlencode "q=CREATE USER <%= p('influxdb.user') %> WITH PASSWORD '<%= p('influxdb.password') %>'  WITH ALL PRIVILEGES" -k
 <% end %>
 
 # DI-05
