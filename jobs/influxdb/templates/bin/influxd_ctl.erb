@@ -123,7 +123,7 @@ case $1 in
 
         log_success_msg "$name process was started"
 
-        until nc -w 1 127.0.0.1 8086 </dev/null; do
+        until nc -w 1 127.0.0.1 <%= p('influxdb.port') %> </dev/null; do
           echo "$(date): waiting for influxd..."
           sleep 1
 
