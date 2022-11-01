@@ -69,6 +69,9 @@ properties:
     default: "1"
     description: "default replication count for database"
 
+  influxdb.port:
+    default: 8086
+    description: "influx port"
 
   influxdb.data.engine:
     default: "tsm1"
