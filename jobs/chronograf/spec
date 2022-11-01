@@ -15,19 +15,28 @@ provides:
   - name: chronograf
     type: chronograf
     properties:
-    - chronograf.password
-    - chronograf.https_enabled
+    - influxdb.user
+    - influxdb.password 
+    - influxdb.https_enabled
+    - influxdb.http.bind-address
 
 consumes:
 - name: chronograf
   type: chronograf
 
 properties:
-  chronograf.password:
+  influxdb.user:
+    description: "Set Influxdb's user"
+
+  influxdb.password:
     description: "Set Influxdb's password"
 
-  chronograf.https_enabled:
-    description: "Set Influxdb's HTTPS"
+  influxdb.https_enabled:
+    description: "Set Influxdb's HTTPS option"
+
+  influxdb.http.bind-address:
+    description: "Set Influxdb's address (third-level domain or port)" 
+
 
   http.tls.certificate:
     default: ~

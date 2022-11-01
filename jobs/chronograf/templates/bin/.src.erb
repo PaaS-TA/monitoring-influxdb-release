@@ -1,10 +1,10 @@
-<% if p('chronograf.https_enabled') == 'true' %>
+<% if p('influxdb.https_enabled') == 'true' %>
 {
 "id": "10000",
 "name": "InfluxDB",
-"username": "admin",
-"password": "<%= p('chronograf.password') %>",
-"url": "https://localhost:8086",
+"username": "<%= p('influxdb.user') %>",
+"password": "<%= p('influxdb.password') %>",
+"url": "https://localhost:<%= p('influxdb.http.bind-address') %>",
 "type":"influx",
 "insecureSkipVerify": true,
 "default": true,
@@ -15,9 +15,9 @@
 {
 "id": "10000",
 "name": "InfluxDB",
-"username": "admin",
-"password": "<%= p('chronograf.password') %>",
-"url": "http://localhost:8086",
+"username": "<%= p('influxdb.user') %>",
+"password": "<%= p('influxdb.password') %>",
+"url": "http://localhost:<%= p('influxdb.http.bind-address') %>",
 "type":"influx",
 "insecureSkipVerify": false,
 "default": true,
