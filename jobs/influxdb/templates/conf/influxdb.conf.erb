@@ -1,5 +1,5 @@
 reporting-disabled = true
-bind-address = ":8088"
+bind-address = ":<%= p("influxdb.backup.bind-address") %>"
 hostname = "<%= spec.address %>"
 join = ""
 
@@ -61,7 +61,7 @@ join = ""
 
 [http]
   enabled = <%= p("influxdb.http.enabled") %> 
-  bind-address = "<%= p("influxdb.http.bind-address") %>"
+  bind-address = ":<%= p("influxdb.http.bind-address") %>"
   auth-enabled = <%= p("influxdb.http.auth-enabled") %> 
   log-enabled = <%= p("influxdb.http.log-enabled") %> 
   write-tracing = <%= p("influxdb.http.write-tracing") %> 

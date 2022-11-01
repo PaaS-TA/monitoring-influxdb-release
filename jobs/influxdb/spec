@@ -26,19 +26,27 @@ consumes:
 - name: influxdb
   type: influxdb
 
-properties: 
+properties:
+  influxdb.backup.bind-address:
+    description: "Influxdb Backup Port"
+    default: "8088"
+
   influxdb.cf_db_name:
     description: "PaaS-TA Core VM Metric Database"
     default: "cf_metric_db"
+
   influxdb.bosh_db_name:
     description: "Bosh VM Metric Database"
     default: "bosh_metric_db"
+
   influxdb.container_db_name:
     description: "PaaS-TA APP Metric Database"
     default: "container_metric_db"
+
   influxdb.logging_db_name: 
     description: "PaaS-TA Core VM Log Database "
     default: "logging_db"
+
   influxdb.password:
     description: "Set Influxdb admin Password"
 

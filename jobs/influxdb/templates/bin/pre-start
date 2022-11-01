@@ -3,10 +3,10 @@
 set -e
 
 # DI-04
-iptables -A INPUT -s 10.0.0.0/32 -p tcp --dport 8086  -j ACCEPT
-iptables -A INPUT -s 10.0.0.0/32 -p tcp --dport 8088  -j ACCEPT
-iptables -A INPUT -s 10.0.0.0/32 -p udp --dport 8086  -j ACCEPT
-iptables -A INPUT -s 10.0.0.0/32 -p udp --dport 8088  -j ACCEPT
+iptables -A INPUT -s 10.0.0.0/32 -p tcp --dport <%= p('influxdb.http.bind-address') %>  -j ACCEPT
+iptables -A INPUT -s 10.0.0.0/32 -p tcp --dport <%= p('influxdb.backup.bind-address') %>  -j ACCEPT
+iptables -A INPUT -s 10.0.0.0/32 -p udp --dport <%= p('influxdb.http.bind-address') %>  -j ACCEPT
+iptables -A INPUT -s 10.0.0.0/32 -p udp --dport <%= p('influxdb.backup.bind-address') %>  -j ACCEPT
 
 # DI-06
 sudo chown vcap:vcap /var/vcap/jobs/influxdb/config/influxdb.conf

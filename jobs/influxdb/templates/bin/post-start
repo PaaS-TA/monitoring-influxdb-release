@@ -4,9 +4,9 @@ set -e
 
 # DI-02
 <% if p('influxdb.https_enabled') == 'true' %>
-curl "https://localhost:8086/query" --data-urlencode "q=CREATE USER '<%= p('influxdb.user') %>' WITH PASSWORD '<%= p('influxdb.password') %>'  WITH ALL PRIVILEGES" -k
+curl "https://localhost:<%= p('influxdb.http.bind-address') %>/query" --data-urlencode "q=CREATE USER <%= p('influxdb.user') %> WITH PASSWORD '<%= p('influxdb.password') %>'  WITH ALL PRIVILEGES" -k
 <% else %>
-curl "http://localhost:8086/query" --data-urlencode "q=CREATE USER '<%= p('influxdb.user') %>' WITH PASSWORD '<%= p('influxdb.password') %>'  WITH ALL PRIVILEGES" -k
+curl "http://localhost:<%= p('influxdb.http.bind-address') %>/query" --data-urlencode "q=CREATE USER <%= p('influxdb.user') %> WITH PASSWORD '<%= p('influxdb.password') %>'  WITH ALL PRIVILEGES" -k
 <% end %>
 
 # DI-05
@@ -23,7 +23,7 @@ protocol=http
 <% end %>
 
 $bootstrapper \
-        -influxUrl $protocol://localhost:8086 \
+        -influxUrl $protocol://localhost:<%= p('influxdb.http.bind-address') %> \
         -user <%= p('influxdb.user') %> \
         -password <%= p('influxdb.password') %> \
         -database <%= p('influxdb.cf_db_name') %>  \
@@ -31,7 +31,7 @@ $bootstrapper \
         -replication <%= p('influxdb.replication') %>
 
 $bootstrapper \
-        -influxUrl $protocol://localhost:8086 \
+        -influxUrl $protocol://localhost:<%= p('influxdb.http.bind-address') %> \
         -user <%= p('influxdb.user') %> \
         -password <%= p('influxdb.password') %> \
         -database <%= p('influxdb.bosh_db_name') %> \
@@ -39,7 +39,7 @@ $bootstrapper \
         -replication <%= p('influxdb.replication') %>
 
 $bootstrapper \
-        -influxUrl $protocol://localhost:8086 \
+        -influxUrl $protocol://localhost:<%= p('influxdb.http.bind-address') %> \
         -user <%= p('influxdb.user') %> \
         -password <%= p('influxdb.password') %> \
         -database <%= p('influxdb.container_db_name') %> \
@@ -47,7 +47,7 @@ $bootstrapper \
         -replication <%= p('influxdb.replication') %>
 
 $bootstrapper \
-        -influxUrl $protocol://localhost:8086 \
+        -influxUrl $protocol://localhost:<%= p('influxdb.http.bind-address') %> \
         -user <%= p('influxdb.user') %> \
         -password <%= p('influxdb.password') %> \
         -database <%= p('influxdb.logging_db_name') %> \
